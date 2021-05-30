@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>CRM indexedDB</title>
+		<link
+			href="https://fonts.googleapis.com/icon?family=Material+Icons"
+			rel="stylesheet"
+		/>
+
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/styles.css" />
+	</head>
+	<body>
+		<div class="contenedor">
+			<header class="header">
+				<h1 class="header__h1">CRM - indexedDB</h1>
+				<p class="header__p">
+					Administra a tus clientes con el CRM - indexedDB
+				</p>
+				<nav class="header__nav">
+					<ul class="header__ul">
+						<li class="header__li">
+							<a href="index.html" class="header__link">Clientes</a>
+						</li>
+						<li class="header__li active">
+							<a href="#" class="header__link">Nuevo Cliente</a>
+						</li>
+					</ul>
+				</nav>
+			</header>
+			<main class="main">
+				<h1 class="main__h1">Nuevo Cliente</h1>
+				<form action="#" class="form" id="form" autocomplete="off">
+					<div class="campo">
+						<label for="nombre" class="label">Nombre</label>
+						<input type="text" id="nombre" class="input" />
+					</div>
+					<div class="campo">
+						<label for="correo" class="label">Correo</label>
+						<input type="text" id="correo" class="input" />
+					</div>
+					<div class="campo">
+						<label for="telefono" class="label">Telefono</label>
+						<input type="text" id="telefono" class="input" />
+					</div>
+					<div class="campo">
+						<label for="empresa" class="label">Empresa</label>
+						<input type="text" id="empresa" class="input" />
+					</div>
+					<button type="submit" class="submit">Agregar Cliente</button>
+				</form>
+			</main>
+		</div>
+		<template id="template-alerta">
+			<div id="alerta" class="alerta">
+				<p class="alerta__p" id="alerta__p">
+					Todos los campos son obligatorios
+				</p>
+			</div>
+		</template>
+		<script src="js/nuevoCliente.js" type="module"></script>
+	</body>
+</html>

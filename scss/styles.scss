@@ -1,0 +1,257 @@
+@import "variables";
+
+html {
+	box-sizing: border-box;
+}
+*,
+*::after,
+*::before {
+	box-sizing: inherit;
+}
+body {
+	font-family: $fuente;
+	background-color: #dfdfdf;
+}
+.contenedor {
+	display: flex;
+	flex-direction: column;
+	@media (min-width: 1300px) {
+		flex-direction: row;
+	}
+}
+.header {
+	background-color: $green;
+	height: 360px;
+	padding: 0 24px;
+	color: white;
+	@media (min-width: 1300px) {
+		max-width: 450px;
+		height: 100vh;
+	}
+	.header__h1 {
+		font-size: 32px;
+		margin: 36px 0;
+	}
+	.header__p {
+		font-size: 22px;
+		line-height: 25px;
+		margin-bottom: 36px;
+		font-weight: 300;
+	}
+}
+.header__nav {
+	.header__ul {
+		display: flex;
+		flex-direction: column;
+	}
+	.header__li {
+		flex-basis: 100%;
+		padding: 8px;
+		margin-bottom: 8px;
+	}
+	.header__link {
+		color: white;
+		font-weight: 300;
+		font-size: 24px;
+		text-decoration: none;
+	}
+	.active {
+		background-color: $dark-green;
+		.header__link {
+			color: white;
+		}
+	}
+}
+.main {
+	padding: 0 24px;
+	flex-grow: 1;
+	margin-bottom: 64px;
+	.main__h1 {
+		color: #333;
+		font-weight: 600;
+		text-align: center;
+		font-size: 32px;
+		margin: 40px 0;
+	}
+}
+.contenedor-table {
+	overflow-x: auto;
+}
+.table {
+	width: 900px;
+	margin-left: auto;
+	margin-right: auto;
+	border-collapse: collapse;
+	border: 1px solid transparent;
+	text-align: left;
+	border-radius: 15px;
+	-moz-border-radius: 20px;
+	-webkit-border-radius: 5px;
+	.table__header {
+		.table__row {
+			:first-child {
+				border-top-left-radius: 10px;
+			}
+			:last-child {
+				border-top-right-radius: 10px;
+			}
+		}
+		.table__data {
+			color: #222;
+			background-color: $light-gray;
+			padding: 14px 24px;
+			font-weight: 500;
+		}
+	}
+}
+// template table__row
+.table__body {
+	.table__row {
+	}
+	.table__data {
+		padding: 16px 24px;
+		vertical-align: middle;
+		border-bottom: 1px solid $light-gray;
+		background-color: white;
+		.data__nombre {
+			display: block;
+			font-weight: 500;
+			font-size: 18px;
+			margin-bottom: 2px;
+		}
+		.data__correo {
+			font-weight: 300;
+		}
+		.editar {
+			text-decoration: none;
+			margin-right: 14px;
+			color: $dark-green;
+			font-weight: 500;
+		}
+		.eliminar {
+			text-decoration: none;
+			color: $dark-red;
+			font-weight: 500;
+		}
+		.editar:hover,
+		.eliminar:hover {
+			cursor: pointer;
+		}
+	}
+	.table__row:last-of-type {
+		:first-child {
+			border-bottom-left-radius: 10px;
+		}
+		:last-child {
+			border-bottom-right-radius: 10px;
+		}
+	}
+}
+
+.form {
+	max-width: 500px;
+	margin: 0 auto;
+	padding: 16px;
+	border-radius: 5px;
+	background-color: white;
+	.campo {
+		position: relative;
+		margin-bottom: 16px;
+		&:first-of-type::after {
+			position: absolute;
+			content: "person";
+			font-size: 24px;
+			font-family: "Material Icons";
+			color: #777;
+			right: 12px;
+			bottom: 12px;
+		}
+		&:nth-child(2)::after {
+			position: absolute;
+			content: "email";
+			font-size: 24px;
+			font-family: "Material Icons";
+			color: #777;
+			right: 12px;
+			bottom: 12px;
+		}
+		&:nth-child(3)::after {
+			position: absolute;
+			content: "phone";
+			font-size: 24px;
+			font-family: "Material Icons";
+			color: #777;
+			right: 12px;
+			bottom: 12px;
+		}
+		&:nth-child(4)::after {
+			position: absolute;
+			content: "business";
+			font-size: 24px;
+			font-family: "Material Icons";
+			color: #777;
+			right: 12px;
+			bottom: 12px;
+		}
+	}
+
+	.label {
+		display: block;
+		margin-bottom: 8px;
+		font-weight: 600;
+		font-size: 16px;
+		color: #555;
+	}
+	.input {
+		font-size: 16px;
+		height: 48px;
+		display: block;
+		width: 100%;
+		outline: none;
+		border: 1px solid #ccc;
+		padding: 8px 10px;
+		border-radius: 5px;
+	}
+	#nombre::after {
+		position: absolute;
+		top: 0;
+		right: 0;
+		content: "person";
+		font-family: "Material Icons";
+		color: red;
+	}
+	.submit {
+		margin: 18px 0;
+		background-color: $dark-green;
+		height: 48px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: white;
+		border: none;
+		font-size: 18px;
+		border-radius: 5px;
+		padding: 16px;
+		width: 100%;
+		&:hover {
+			cursor: pointer;
+		}
+	}
+	// JS
+	.alerta {
+		height: 48px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: $dark-red;
+		border-radius: 5px;
+		width: 100%;
+		.alerta__p {
+			font-weight: 600;
+			color: white;
+		}
+	}
+	.bg-green {
+		background-color: #4aa96c;
+	}
+}
